@@ -14,19 +14,19 @@ services:
   #
   #
 
- 	splunk:
+  splunk:
     image: splunk/splunk:latest
   	container_name: splunk
     environment:
- 		  - SPLUNK_START_ARGS=--accept-license
- 		  - SPLUNK_PASSWORD=<your_splunk_admin_password>
- 		ports:
- 		  - "8000:8000"
- 		  - "8088:8088"
- 		volumes:
- 		   - splunk-data:/opt/splunk/var
- 		volumes:
- 		  splunk-data:
+      - SPLUNK_START_ARGS=--accept-license
+      - SPLUNK_PASSWORD=<your_splunk_admin_password>
+    ports:
+      - "8000:8000"
+      - "8088:8088"
+    volumes:
+       - splunk-data:/opt/splunk/var
+    volumes:
+      splunk-data:
     networks:
       app-net:
         ipv4_address: 192.168.12.35
