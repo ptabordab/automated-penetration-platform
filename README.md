@@ -2,10 +2,10 @@
 Cybersecurity University of Toronto Bootcamp Final Project - Automated Penetration Platform
 
 
-## Overview
+### Overview
 Automated Penetration Platform leverages a process of using advanced testing tools to
-evaluate a system’s security architecture. It helps identify most if not all, of the security
-risks within your network by implementing it regularly to stop cyber threats and attacks.
+evaluate a system’s security architecture.It helps identify most, if not all, of the security
+risks with in your network by implementing it regularly to stop cyber threats and attacks.
 Automated Penetration Platform is an advanced form of manual penetration testing that
 leverages machine learning and algorithms to find flaws in systems, highlighting
 vulnerabilities speedily. Assessing vulnerabilities present in your network or web
@@ -15,7 +15,7 @@ Once detected, loopholes can be blocked to prevent intrusion.
 
 
 
-## Vision
+### Vision
 
 An Automatic Penetration Platform (APP) is a software tool
 that automates penetration testing by executing code to
@@ -38,9 +38,9 @@ more details will be available soon.
 
 
 
-## Benefits
+### Benefits
 
-Automated Penetration Platform provides several advantages to testers and organizations.
+Automated Penetration Platform provides a number of advantages to testers and organizations.
 
 Some of these benefits include:
 
@@ -52,8 +52,8 @@ Automated tools can significantly reduce the time required for penetration testi
 which is not possible with manual testing.
 
 **Frequency**: Automated tool scan replicate tests as of ten as needed, sometimes
-multiple times a day. This helps testers stay on top of security and vulnerability
-issues within the system.
+multiple times a day.This helps testers stay on top of security and vulnerability
+issues with in the system.
 
 **Stress reduction**: Automated testing can reduce stress levels for testers and
 developers, allowing them to focus on other projects and tasks that require
@@ -65,12 +65,12 @@ through an update made available by our developers
 
 
 
-## An efficient alternative to manual testing 
-Automated testing has gained significant attention and adoption in recent years. Most developers and testers use automated tools to promote efficiency and save time. While the benefits of these tools are numerous, they are not yet a complete alternative to human testers. Automated tools are still limited in test scope and applicability. For instance, while an automated tool may be perfect for running regression tests and analysis, it definitely cannot handle exploratory tests. Exploration testing requires the experiential and analytical skills of the tester. Additionally, automation is still limited in the area of user-experience testing. For example, visual elements and placements of tabs and menus. Real user feedback remains appropriate and needed for QA. Automated tools are prone to bugs and technical faults, just like human testers. Therefore, automatic testing and human testing should work collaboratively for efficient and better results.
+### An efficient alternative to manual testing
+Automated testing has gained significant attention and adoption in recent years. Most developers and testers use automated tools to promote efficiency and save time. While the benefits of these tools are numerous, they are not yet a complete alternative to human testers. Automated tools are still limited in test scope and applicability. For instance, while an automated tool may be perfect for running regression tests and analysis, it definitely cannot handle exploratory tests. Exploration testing requires the experiential and analytical skills of the tester. Additionally, automation is still limited in the area of user-experience testing. For example, visual elements and placements of tabs and menu. Real user feedback remains appropriate and needed for QA. Automated tools are prone to bugs and technical faults, just like human testers. Therefore, automatic testing and human testing should work collaboratively for efficient and better results.
 
 
 
-## Suitability
+### Suitability
 
 Before employing an automated tool/platform for your penetration testing, here are a few things to consider:
 
@@ -79,7 +79,7 @@ The first step is to identify the type of test you need to execute on your syste
 This should depend on the use and need of the system.
 
 For example, the test required for an
-An Internet banking platform would undoubtedly differ and may necessitate a more rigorous process than that required for a school portal.
+an internet banking platform would undoubtedly differ and may necessitate a more rigorous process than that required for a school portal.
 
 
 **Identify test methods**: The next
@@ -90,38 +90,42 @@ It may be automated, manual, or a combination of both.
 Draw up a timeline for your testing activity.
 Penetration testing  frequently requires engaging in different activities
 over some time.
-To meet your time target and not overstress the system, it is best to schedule
+To meet your time target and not over stress the system, it is best to schedule
 testing activities.
 
 **Identify the appropriate test tools**:
 There are various automated tools by different developers in the market for penetration testing.
-Some may be more sophisticated than others and offer different services,
+Some may be more sophisticated than others, offer different services,
 and some tools may be selective to certain operating systems.
 
 **Determine the required test frequency**: It is important to determine the
 required test frequency.
 This could be an industry standard or a professional choice.
 Whichever one, determining a periodic retest time and sticking
-to it is an important part of a penetration test.
+to it is important part of a penetration test.
 You need to have records of test results for the
 present.
 These reports could also act as a guide in the future.
 
 
-## Summary
-APP is a versatile platform performing a range of functions to test the security of a system. It can scan a system for vulnerabilities, simulate an attack, and identify weaknesses and frailties. These three major functionalities can work independently or in tandem to execute a pen-test. The W3AF is equipped with a variety of tools that make it an efficient pen-test tool.
+### Summary
+APP is a versatile platform performing a range of functions to test the security of a system. It can scan a system for vulnerabilities, simulate an attack, and identify weaknesses and frailties. These three major functionalities can work independently or in tandem to execute a pen-test.The W3AF is equipped with a variety of tools that make it an efficient pen-test tool.
 
 
-# System Requirements
+## System Requirements
+1. Base OS, we can use Kali Linux or Ubuntu
+2. If using Ubuntu, you will have to install nmap
+3. If using Ubuntu, you will have to install metasploit
+4. Docker (and Docker Compose)
+5. NodeJS
+6. Splunk as a container
+7. Metasploitable 2 and 3 as a containers
+8. MondoDB as a containers
+9. Wordpress and MySQL as a containers
 
 
-
-# Limitations
-
-
-# Documentation
-[How to install Splunk]( ../docs/how_to_install_splunk.md)
+## Limitations
 
 
-
-
+## Documentation
+[How to install Splunk](/docs/how_to_install_splunk.md)
