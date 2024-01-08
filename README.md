@@ -128,5 +128,6 @@ APP is a versatile platform performing a range of functions to test the security
 
 
 ## Documentation
-1. [How to install nmap in Ubuntu](/docs/how_install_nmap_in_ubuntu.md)
-2. [How to install Splunk in Docker Compose](/docs/how_to_install_splunk_in_docker.md)
+1. [How to install nmap in Ubuntu](/docs/nmap/how_install_nmap_in_ubuntu.md)
+2. [How to install Splunk in Docker Compose](/docs/splunk/how_to_install_splunk_in_docker.md)
+3. [How to install Nessus in Ubuntu](/docs/nessus/how_to_install_nessus.md)
