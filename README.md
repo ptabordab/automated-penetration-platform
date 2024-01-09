@@ -127,7 +127,18 @@ APP is a versatile platform performing a range of functions to test the security
 ## Limitations
 
 
+
+## npm dependencies
+1. npm i -D typescript
+2. npm i node-npm
+
+
+
+
 ## Documentation
-1. [How to install nmap in Ubuntu](/docs/nmap/how_to_install_nmap_in_ubuntu.md)
-2. [How to install Splunk in Docker Compose](/docs/splunk/how_to_install_splunk_in_docker.md)
-3. [How to install Nessus in Ubuntu](/docs/nessus/how_to_install_nessus.md)
+1. [How to install NodeJS on Ubuntu](/docs/nmap/how_to_install_nodejs_on_ubuntu.md)
+2. [How to install nmap on Ubuntu](/docs/nmap/how_to_install_nmap_on_ubuntu.md)
+3. [How to install Splunk in Docker Compose](/docs/splunk/how_to_install_splunk_in_docker.md)
+4. [How to install Nessus on Ubuntu](/docs/nessus/how_to_install_nessus.md)
+5. [NodeJS and Typescript](https://nodejs.org/en/learn/getting-started/nodejs-with-typescript)
+6. [Typescript](/docs/typescript/typescript.md)
