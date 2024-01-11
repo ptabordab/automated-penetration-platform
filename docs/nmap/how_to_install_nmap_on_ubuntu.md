@@ -4,17 +4,17 @@
 To install Nmap on Ubuntu, you can use the package manager apt. Open a terminal and run the following commands:
 Update the package list:
 
-``` bash
+```bash
 sudo apt update
 ```
 
-  
+
 Install Nmap:
 
-``` bash
+```bash
 sudo apt install nmap
 ```
-  
+
 This will download and install Nmap and its dependencies on your Ubuntu system. After the installation is complete, you can use Nmap from the command line.
 
 For example:

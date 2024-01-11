@@ -10,6 +10,10 @@ services:
 
   #
   #
+
+
+
+
   # Infrastrucure
   #
   #
@@ -21,13 +25,13 @@ services:
       - SPLUNK_START_ARGS=--accept-license
       - SPLUNK_PASSWORD=CyberSecurity
     ports:
-      - "8000:8000"
-      - "8088:8088"
+      - "9000:8000"
+      - "9088:8088"
     volumes:
       - splunk-data:/opt/splunk/var
     networks:
       virtual-net:
-        ipv4_address: 192.168.12.3
+        ipv4_address: 172.17.0.3
 
 
   mongodb:
@@ -42,7 +46,7 @@ services:
       - mongodb_data:/data/db
     networks:
       virtual-net:
-        ipv4_address: 192.168.12.4
+        ipv4_address: 172.17.0.4
 
 
 
@@ -63,7 +67,7 @@ services:
     tty: true
     networks:
       virtual-net:
-        ipv4_address: 192.168.12.40
+        ipv4_address: 172.17.0.5
 
 
 #
