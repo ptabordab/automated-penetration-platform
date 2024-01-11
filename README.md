@@ -115,13 +115,37 @@ APP is a versatile platform performing a range of functions to test the security
 ## System Requirements
 1. Base OS, we can use Kali Linux or Ubuntu
 2. If using Ubuntu, you will have to install nmap
-3. If using Ubuntu, you will have to install metasploit
+3. If using Ubuntu, you will have to install metasploit framework
 4. Docker (and Docker Compose)
 5. NodeJS
 6. Splunk as a container
-7. Metasploitable 2 and 3 as a containers
-8. MondoDB as a containers
-9. Wordpress and MySQL as a containers
+7. Metasploitable 2 as a container
+8. MondoDB as a container
+9. Wordpress and MySQL as a container
+
+
+## Installattion Steps
+1. Install VirtualBox
+2. Install Ubuntu (and set user as root - diisabled by default -)
+   *NOTE*: By default ubuntu disable root user by not assigning a password
+
+   We need to add the username in sudoers file to be allowed issue sudo commands
+
+   ```bash
+   sudo su 
+   usermod -aG sudo username
+   ```
+
+3. Update Kernel headers
+4. Install VirtualBox Guess Add-on
+5. Install Docker and Docker Compose
+6. Install NodeJS and npm
+7. Installa nmap
+8. Install metasploit Framework
+9. Install Nessus
+10. Install git
+
+
 
 
 ## Limitations
