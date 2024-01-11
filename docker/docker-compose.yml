@@ -30,6 +30,20 @@ services:
         ipv4_address: 192.168.12.3
 
 
+  mongodb:
+    image: mongo:latest
+    container_name: my-mongodb
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: db_admin
+      MONGO_INITDB_ROOT_PASSWORD: CyberSecurity
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      virtual-net:
+        ipv4_address: 192.168.12.4
+
 
 
   #
@@ -47,7 +61,9 @@ services:
       - "139:139"   # SMB
       - "445:445"   # SMB
     tty: true
-
+    networks:
+      virtual-net:
+        ipv4_address: 192.168.12.40
 
 
 #
@@ -66,3 +82,4 @@ networks:
 
 volumes:
   splunk-data:
+  mongodb_data:
