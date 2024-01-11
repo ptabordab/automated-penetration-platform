@@ -142,3 +142,6 @@ APP is a versatile platform performing a range of functions to test the security
 4. [How to install Nessus on Ubuntu](/docs/nessus/how_to_install_nessus.md)
 5. [NodeJS and Typescript](https://nodejs.org/en/learn/getting-started/nodejs-with-typescript)
 6. [Typescript](/docs/typescript/typescript.md)
+7. [Docker/Docker Compose](/docs/docker/how_to_install_docker_on_ubuntu.md)
+8. [How to install git on Ubuntu](/docs/git/how_to_install_git_on_ubuntu.md)
+9. [How to install Docker on Ubuntu](/docs/docker/how_to_install_docker_on_ubuntu.md)

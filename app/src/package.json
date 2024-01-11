@@ -2,19 +2,25 @@
   "name": "app",
   "version": "1.0.0",
   "description": "Automated Penetration Platform (APP)",
-  "main": "index.js",
+  "main": "app.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ptabordab/automated-penetration-platform.git"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "copy-files": "copyfiles -V **/*.config .npm/dist",
+    "compile": "tsc"
   },
   "keywords": [],
   "author": "Rob McAfee <rob.mcafee@symtech.com>, Phil Santos <phil.adrian.santos@gmail.com>, Pedro Taborda <taborda_pedro@yahoo.com>",
   "license": "ISC",
   "dependencies": {
+    "copyfiles": "^2.4.1",
+    "log4js": "^6.4.0",
+    "mongodb": "^6.3.0",
     "node-nmap": "^4.0.0",
+    "stopwatch": "^0.2.0",
     "typescript": "^5.3.3"
   },
   "devDependencies": {

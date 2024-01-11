@@ -1,0 +1,24 @@
+{
+  "nmap":
+  {
+    
+  },
+  "nessus":
+  {
+
+  },
+  "metasploit":
+  {
+
+  },
+  "db": {
+    "uri": "mongodb://localhost:27017",
+    "name": "app",
+    "collection": "discoveries" ,
+    "username": "app-user",
+    "password": "CyberSecurity" 
+  },
+  "promise" : {
+    "delay": 2000
+  }
+}

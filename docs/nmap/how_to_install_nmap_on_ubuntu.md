@@ -1,4 +1,4 @@
-# How to install nmap in ubuntu
+# How to install nmap on Ubuntu
 
 
 To install Nmap on Ubuntu, you can use the package manager apt. Open a terminal and run the following commands:
