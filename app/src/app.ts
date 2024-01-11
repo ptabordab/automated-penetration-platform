@@ -1,7 +1,7 @@
 import { runNmapScan } from './nmap/runNmapScan';
-
-import { loadConfig } from './shared/loadConfig';
-import { StringLiteralLike } from 'typescript';
+import * as log4js from 'log4js';
+import { StopWatch } from 'stopwatch-node';
+import { getConfig } from './shared/getConfig';
 
 async function main() {
     try
@@ -10,12 +10,15 @@ async function main() {
 
         const loggerName = "app";
 
-        const version = "1.0.0";
+        log4js.configure('log4js.config');
 
-        const config = loadConfig(loggerName);
+        const logger = log4js.getLogger(loggerName);
 
+        const config = getConfig(logger);
 
-        logger.info(`Automated Pentesting Platform (APP) , ${version}`)
+        logger.info(`Automated Penetration Platform (APP) , ${config.version}`);
+        logger.info(`Copyright (c) 2024 - Rob McAfee <rob.mcafee@symtech.com>, Phil Santos <phil.adrian.santos@gmail.com>, Pedro Taborda <taborda_pedro@yahoo.com>`);
+
 
         const stopwatch = new StopWatch(loggerName);
 
@@ -24,13 +27,14 @@ async function main() {
 
         stopwatch.start('nmap');
 
-        const nmapResults = await runNmapScan('google.com'), config, logger;
+        /*
+        const nmapResults = await runNmapScan('google.com', config, logger);
 
         if(nmapResults)
         {
 
         }
-
+        */
 
 
         stopwatch.stop();
@@ -45,13 +49,18 @@ async function main() {
 
 
         // Script End
-        logger.info(`[main] Short Summary: ${stopwatch.shortSummary()}`);
-        logger.info(`[main] Task Count: ${stopwatch.getTaskCount()}`);
+        logger.info(`Short Summary: ${stopwatch.shortSummary()}`);
+        logger.info(`Task Count: ${stopwatch.getTaskCount()}`);
         // A table describing all tasks performed
-        logger.info(`[main] : ${stopwatch.prettyPrint()}`);
+        logger.info(` :${stopwatch.prettyPrint()}`);
 
 
-    } catch (error) {
+        log4js.shutdown(() => true);
+
+
+    } 
+    catch (error) 
+    {
         console.error('Error:', error);
     }
 }
