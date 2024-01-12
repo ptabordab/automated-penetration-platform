@@ -10,8 +10,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "copy-files-1": "copyfiles -V **/*.config  ../dist",
-    "copy-files-2": "copyfiles -V package.json ../dist",
-    "resolve-dependencies": "npm install",
+    "copy-files-2": "copyfiles -V package.json config.json ../dist",
+    "resolve-dependencies": "cd ../dist; npm install",
     "compile": "tsc"
   },
   "keywords": [],
