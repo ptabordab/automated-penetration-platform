@@ -77,8 +77,8 @@ services:
     image: tleemcjr/metasploitable2
     ports:
       - "2222:22"   # SSH
-      - "9080:80"     # HTTP
-      - "9443:443"   # HTTPS
+      - "9080:80"   # HTTP
+      - "9443:443"  # HTTPS
       - "139:139"   # SMB
       - "445:445"   # SMB
     tty: true
