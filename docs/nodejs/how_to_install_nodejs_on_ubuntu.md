@@ -19,4 +19,5 @@ npm -v
 This should display the installed versions of Node.js and npm.
 
 *NOTE*: You might get an older version of NnodeJs (12.x) which is usually not suitable for modern development 
-follow this steps to use 16.x - https://computingforgeeks.com/how-to-install-node-js-on-ubuntu-debian/
+follow this steps to use 16.x - https://computingforgeeks.com/how-to-install-node-js-on-ubuntu-debian/ or 
+https://unix.stackexchange.com/questions/627635/upgrading-nodejs-on-ubuntu-how-to-fix-broken-pipe-error
