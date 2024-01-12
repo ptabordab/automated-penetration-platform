@@ -55,7 +55,9 @@ services:
       - NASL_CACHE_SIZE=200
       - NASL_CACHE_EXPIRATION=15m
       - NESSUS_UPDATE=1
-      - LINKING_KEY=<Your_Linking_Key_Here>
+      - USERNAME: nessus
+      - PASSWORD: CyberSecurity
+      - ACTIVATION_CODE: L2BF-A3G7-FP24-CHC9-89NJ
     volumes:
       - nessus_data:/opt/nessus/var/nessus
       - nessus_logs:/opt/nessus/var/nessus/logs

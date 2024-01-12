@@ -16,7 +16,10 @@ With Nessus, you can audit the following environments:
 
 Meets PCI DSS requirements through configuration auditing, web application scanning
 
-## Step 1: Install Nessus Scanner
+## Manually
+
+
+### Step 1: Install Nessus Scanner
 
 Download from website: *https://www.tenable.com/downloads/nessus?loginAttempted=true*
 
@@ -53,7 +56,7 @@ Created symlink /etc/systemd/system/multi-user.target.wants/nessusd.service → 
  - Then go to https://jammy:8834/ to configure your scanner
 
 
-## Step 2: Start and enable nessusd service
+### Step 2: Start and enable nessusd service
 
  Start nessusd service:
 
@@ -95,7 +98,7 @@ sudo ufw allow 8834/tcp
 
 
 
-## Step 3: Configuring Nessus Vulnerability scanner
+### Step 3: Configuring Nessus Vulnerability scanner
 
 Visit your Nessus web interface on https://[IP Address|Hostname]:8834 to finish Nessus installation and activation. Create Nessus Administrator Account on the first page.
 
@@ -120,3 +123,9 @@ Be informed that this could take some time as Nessus download Plugins and prepar
 Nessus default page on login should look similar to below.
 
 ![alt text](nessus-dashboard-1024x242.png "Nessus Dashboard Page")
+
+## Docker Compose 
+
+https://community.tenable.com/s/article/Deploy-Nessus-docker-image-with-docker-compose?language=en_US
+
+
