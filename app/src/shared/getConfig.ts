@@ -14,7 +14,7 @@ export const getConfig = () : Config =>
 
     let packageJson = JSON.parse(fs.readFileSync('package.json', 'utf-8'));
 
-    config.version = packageJson.versiion;
+    config.version = packageJson.version;
 
     let configJson = JSON.parse(fs.readFileSync('config.json', 'utf-8'));
 
@@ -24,8 +24,9 @@ export const getConfig = () : Config =>
     config.db_username    = configJson.db.username;
     config.db_password    = configJson.db.password;
  
+    config.promises_delay = configJson.promises.day;
 
-    logger.debug(`Coonfiguration: ${JSON.stringify(config)}`);
+    logger.debug(`Configuration: ${JSON.stringify(config)}`);
 
     return config;
 }

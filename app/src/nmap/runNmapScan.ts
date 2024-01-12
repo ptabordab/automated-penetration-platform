@@ -30,7 +30,7 @@ export const runNmapScan = async ( cidr: string, config:any) => {
         logger.error('Error scanning with Nessus:', error);
         throw error;
       }
-    }, config.promise.delay); // Set delay
+    }, config.promises_delay); // Set delay
   });
 
 
