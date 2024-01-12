@@ -46,7 +46,7 @@ services:
 
 
   nessus:
-    image: tenable/nessus
+    image: tenable/nessus:latest-ubuntu
     container_name: nessus
     ports:
       - "8834:8834"
