@@ -6,7 +6,8 @@ export class Config
     // Application Version
     version: string = '';
 
-
+    // nmap switches (array)
+    nmap_switches: string[] = [];
 
     // Database Settings
     db_uri: string = "";
@@ -18,8 +19,8 @@ export class Config
 
 
 
-    // Promises Delay (Time-out)
-    promises_delay: Number = 10;
+    // Promise Delay (Time-out)
+    promise_delay: Number = 10;
 
 
 

@@ -19,6 +19,7 @@
   "license": "ISC",
   "dependencies": {
     "copyfiles": "^2.4.1",
+    "lodash.isempty": "^4.4.0",
     "log4js": "^6.4.0",
     "mongodb": "^6.3.0",
     "node-nmap": "^4.0.0",

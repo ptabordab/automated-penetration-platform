@@ -1,7 +1,10 @@
 {
   "nmap":
   {
-    
+    "switches": [
+      "-sT", 
+      "-sV"
+    ]
   },
   "nessus":
   {

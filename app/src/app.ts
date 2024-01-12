@@ -17,42 +17,61 @@ async function main() {
         const config = getConfig();
 
         logger.info(`Automated Penetration Platform (APP) , ${config.version}`);
-        logger.info(`Copyright (c) 2024 - Rob McAfee <rob.mcafee@symtech.com>, Phil Santos <phil.adrian.santos@gmail.com>, Pedro Taborda <taborda_pedro@yahoo.com>`);
+        logger.info(`Copyright (c) 2024 - Rob McAfee <rob.mcafee@symtech.com> `);
+        logger.info(`                     Phil Santos <phil.adrian.santos@gmail.com> `);
+        logger.info(`                     Pedro Taborda <taborda_pedro@yahoo.com>`);
+
+        if( process.argv.length ===  2)
+        { 
+            logger.error(`Usage: node app.js <IP Address>, node app.js 172.18.1.4`);
+            logger.error('       node app.js <CIDR>       , node app.js 172.18.1.0/24');
+            logger.error('       node app.js <hostname>   , node app.js mycomputer.local ');
+
+            log4js.shutdown(() => true);
+
+            process.exit(-1);
+        }
+        else
+        {
+            const stopwatch = new StopWatch(loggerName);
 
 
-        const stopwatch = new StopWatch(loggerName);
-
-
-        // Run Nmap
-
-        stopwatch.start('nmap');
-
-       
-        const nmapResults = await runNmapScan('google.com', config);
-
-        logger.debug(`Processing nmap results `);
-
-        logger.debug(nmapResults);
-
-        
-
-
-        stopwatch.stop();
-
-        // Scan with Nessus
-        //const nessusScanId = await scanWithNessus(nmapResults);
-
-        // Run Metasploit
-        //const metasploitResults = await runMetasploit();
-
-        console.log('Process completed successfully!');
-
-
-        // Script End
-        logger.info(`Short Summary: ${stopwatch.shortSummary()}`);
-        logger.info(`Task Count: ${stopwatch.getTaskCount()}`);
-        // A table describing all tasks performed
-        logger.info(` :${stopwatch.prettyPrint()}`);
+            // Run Nmap
+    
+            stopwatch.start('nmap');
+    
+            let isEmpty = require('lodash.isempty');
+           
+            const nmapResults = await runNmapScan( process.argv[2], config);
+    
+            if(!isEmpty(nmapResults))
+            {
+                logger.debug(`Processing nmap results `);
+    
+                logger.debug(nmapResults);
+            }
+            else
+            {
+                logger.warn(`nmap did not return any results, check your input parameter`);
+            }
+    
+            stopwatch.stop();
+    
+            // Scan with Nessus
+            //const nessusScanId = await scanWithNessus(nmapResults);
+    
+            // Run Metasploit
+            //const metasploitResults = await runMetasploit();
+    
+            console.log('Process completed successfully!');
+    
+    
+            // Script End
+            logger.info(`Short Summary: ${stopwatch.shortSummary()}`);
+            logger.info(`Task Count: ${stopwatch.getTaskCount()}`);
+            // A table describing all tasks performed
+            logger.info(` :${stopwatch.prettyPrint()}`);
+        }
 
 
         log4js.shutdown(() => true);

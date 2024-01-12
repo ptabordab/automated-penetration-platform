@@ -18,13 +18,17 @@ export const getConfig = () : Config =>
 
     let configJson = JSON.parse(fs.readFileSync('config.json', 'utf-8'));
 
+
+    config.nmap_switches  = configJson.nmap.switches;
+
+
     config.db_uri         = configJson.db.uri;
     config.db_name        = configJson.db.name;
     config.db_collection  = configJson.db.collection;
     config.db_username    = configJson.db.username;
     config.db_password    = configJson.db.password;
  
-    config.promises_delay = configJson.promises.day;
+    config.promise_delay = configJson.promise.delay;
 
     logger.debug(`Configuration: ${JSON.stringify(config)}`);
 
