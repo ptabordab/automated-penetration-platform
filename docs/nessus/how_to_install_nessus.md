@@ -20,11 +20,15 @@ Meets PCI DSS requirements through configuration auditing, web application scann
 
 Download latest release for Ubuntu:Ezoic
 
+```bash
 sudo apt update && sudo apt install curl -y
 wget https://www.tenable.com/downloads/api/v2/pages/nessus/files/Nessus-10.5.2-ubuntu1404_amd64.deb
+```
+
 For Ubuntu , the package name I’m using is:
 
 Nessus-*-ubuntu1404_amd64.deb
+
 Install it by running:
 
 ```bash
