@@ -45,6 +45,25 @@ services:
         ipv4_address: 172.18.1.4
 
 
+  nessus:
+    image: tenable/nessus
+    container_name: nessus
+    ports:
+      - "8834:8834"
+    environment:
+      - ACCEPT_EULA=Y
+      - NASL_CACHE_SIZE=200
+      - NASL_CACHE_EXPIRATION=15m
+      - NESSUS_UPDATE=1
+      - LINKING_KEY=<Your_Linking_Key_Here>
+    volumes:
+      - nessus_data:/opt/nessus/var/nessus
+      - nessus_logs:/opt/nessus/var/nessus/logs
+    restart: always
+    networks:
+      virtual-net:
+        ipv4_address: 172.18.1.6
+
 
   #
   #
@@ -83,3 +102,5 @@ networks:
 volumes:
   splunk-data:
   mongodb_data:
+  nessus_data:
+  nessus_logs:
