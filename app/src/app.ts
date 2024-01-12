@@ -14,7 +14,7 @@ async function main() {
 
         const logger = log4js.getLogger(loggerName);
 
-        const config = getConfig(logger);
+        const config = getConfig();
 
         logger.info(`Automated Penetration Platform (APP) , ${config.version}`);
         logger.info(`Copyright (c) 2024 - Rob McAfee <rob.mcafee@symtech.com>, Phil Santos <phil.adrian.santos@gmail.com>, Pedro Taborda <taborda_pedro@yahoo.com>`);
@@ -27,14 +27,14 @@ async function main() {
 
         stopwatch.start('nmap');
 
-        /*
-        const nmapResults = await runNmapScan('google.com', config, logger);
+       
+        const nmapResults = await runNmapScan('google.com', config);
 
-        if(nmapResults)
-        {
+        logger.debug(`Processing nmap results `);
 
-        }
-        */
+        logger.debug(nmapResults);
+
+        
 
 
         stopwatch.stop();

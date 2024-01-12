@@ -1,9 +1,11 @@
-
+import * as log4js from 'log4js';
 var nmap = require('node-nmap');
 
-export async function runNmapScan( cidr: string, config:any, logger:any) : Promise<string> {
+export const runNmapScan = async ( cidr: string, config:any) => {
 
-  return new Promise(() =>
+  const logger = log4js.getLogger("getConfig()");
+
+  const response =  new Promise(() =>
   {
     setTimeout(() => {
       nmap.nodenmap.nmapLocation = "nmap"; //default
@@ -13,11 +15,11 @@ export async function runNmapScan( cidr: string, config:any, logger:any) : Promi
         const quickscan = new nmap.nodenmap.OsAndPortScan(cidr);
     
         quickscan.on('complete', function(data: any) {
-          console.log(data);
+          logger.debug(data);
         });
     
         quickscan.on('error', function(error: any) {
-          console.error(error);
+          logger.error(error);
         });
     
         quickscan.startScan();
@@ -25,10 +27,13 @@ export async function runNmapScan( cidr: string, config:any, logger:any) : Promi
       }
       catch (error)
       {
-        console.error('Error scanning with Nessus:', error);
+        logger.error('Error scanning with Nessus:', error);
         throw error;
       }
     }, config.promise.delay); // Set delay
   });
+
+
+  return response;
 
 }
