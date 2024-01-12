@@ -18,16 +18,12 @@ Meets PCI DSS requirements through configuration auditing, web application scann
 
 ## Step 1: Install Nessus Scanner
 
-Download latest release for Ubuntu:Ezoic
+Download from website: *https://www.tenable.com/downloads/nessus?loginAttempted=true*
 
-```bash
-sudo apt update && sudo apt install curl -y
-wget https://www.tenable.com/downloads/api/v2/pages/nessus/files/Nessus-10.5.2-ubuntu1404_amd64.deb
-```
 
 For Ubuntu , the package name I’m using is:
 
-Nessus-*-ubuntu1404_amd64.deb
+Nessus-10.6.4-ubuntu1404_amd64.deb
 
 Install it by running:
 
