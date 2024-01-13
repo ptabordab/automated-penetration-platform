@@ -4,7 +4,7 @@ import * as log4js from 'log4js';
 
 export const runNmapScan = async ( ipaddress_or_cidr: string, config:any) => {
 
-  const logger = log4js.getLogger("runNmapScan()");
+  const logger = log4js.getLogger("runNmapScan");
 
   return  new Promise((resolve, reject) =>
   {
@@ -36,7 +36,7 @@ export const runNmapScan = async ( ipaddress_or_cidr: string, config:any) => {
         logger.error('Error scanning with Nmap:', error);
         reject(error);
       }
-    }, config.promises_delay); // Set delay
+    }, config.promisesDelay); // Set delay
 
 
   });

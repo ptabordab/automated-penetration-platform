@@ -1,6 +1,9 @@
 
 
-type Host = {
-  hostname: string;
-  ipAddress: string;
+export class Host
+{
+  hostname  : string= "";
+  ipAddress : string= "";
+  macAddress: string= "";
+  openPorts : any[] = [];
 };

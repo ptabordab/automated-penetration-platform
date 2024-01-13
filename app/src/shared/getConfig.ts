@@ -21,14 +21,17 @@ export const getConfig = () : Config =>
 
     config.nmap_switches  = configJson.nmap.switches;
 
+    config.nessusUrl                = configJson.nessus.url;
+    config.nessusUsername           = configJson.nessus.username;
+    config.nessusPassword           = configJson.nesuss.password;
+    config.nessusApiKey             = configJson.nesuss.apiKey;
+    config.nessusApiToken           = configJson.nesuss.apiToken;
+    config.nessusScanTemplateUUID   = configJson.nessus.templateUUID;
 
-    config.db_uri         = configJson.db.uri;
-    config.db_name        = configJson.db.name;
-    config.db_collection  = configJson.db.collection;
-    config.db_username    = configJson.db.username;
-    config.db_password    = configJson.db.password;
+    config.dbUri         = configJson.db.uri;
+    config.dbCollection  = configJson.db.collection;
  
-    config.promise_delay = configJson.promise.delay;
+    config.promiseDelay = configJson.promise.delay;
 
     logger.debug(`Configuration: ${JSON.stringify(config)}`);
 

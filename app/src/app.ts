@@ -2,6 +2,12 @@ import { runNmapScan } from './nmap/runNmapScan';
 import * as log4js from 'log4js';
 import { StopWatch } from 'stopwatch-node';
 import { getConfig } from './shared/getConfig';
+import { saveNmapResults } from './db/saveNmapResults';
+import { getNessusToken } from './nessus/getNessusToken';
+import { runVulnerabilityScans } from './nessus/runVulnerabilityScans';
+import { getHosts } from './db/getHosts';
+import { ObjectId } from 'mongodb';
+import { Host } from './types/host';
 
 async function main() {
     try
@@ -13,6 +19,8 @@ async function main() {
         log4js.configure('log4js.config');
 
         const logger = log4js.getLogger(loggerName);
+
+        const MongoClient = require('mongodb').MongoClient;
 
         const config = getConfig();
 
@@ -49,6 +57,28 @@ async function main() {
                 logger.debug(`Processing nmap results `);
     
                 logger.debug(nmapResults);
+
+                const uri = config.dbUri;
+
+                const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+
+                // Save results into the database 
+                logger.debug(`Saving nmap results to the database`);
+
+                const scanDocId:ObjectId = await saveNmapResults(nmapResults, client, config);
+
+                // Authenticate and get the session token from 
+                logger.debug(`Login to Nessus`);
+                const sessionToken = await getNessusToken(config);
+
+                logger.debug(`Gettting IP Addresses from nmap discovery `);
+                let hosts: Host[] = await getHosts(scanDocId, client, config);
+
+                logger.debug(`Running Vulnerability Scan on Targets found`);
+                const scanDetails:any[] = await runVulnerabilityScans(hosts, sessionToken, config);
+
+                logger.debug(scanDetails);
+
             }
             else
             {

@@ -8,18 +8,17 @@
   },
   "nessus":
   {
-
+    "url": "https://172.18.1.6:8834",
+    "username": "nessus",
+    "password": "CyberSecurity"
   },
   "metasploit":
   {
 
-  },
+  },      
   "db": {
-    "uri": "mongodb://172.18.1.4:27017",
-    "name": "app",
-    "collection": "discoveries" ,
-    "username": "db_admin",
-    "password": "CyberSecurity" 
+    "uri": "mongodb+srv://db_admin:CyberSecurity@172.18.1.4:27017/app",
+    "collection": "discoveries"
   },
   "promise" : {
     "delay": 2000
