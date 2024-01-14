@@ -13,8 +13,8 @@ export class Config
     nessusUrl               : string = "";
     nessusUsername          : string = "";
     nessusPassword          : string = ""; 
-    nessusApiKey            : string = ""; 
-    nessusApiToken          : string = ""; 
+    nessusAccessKey         : string = ""; 
+    nessusSecretKey         : string = ""; 
     nessusScanTemplateUUID  : string = "";
 
 

@@ -23,14 +23,15 @@ export const getConfig = () : Config =>
 
     config.nessusUrl                = configJson.nessus.url;
     config.nessusUsername           = configJson.nessus.username;
-    config.nessusPassword           = configJson.nesuss.password;
-    config.nessusApiKey             = configJson.nesuss.apiKey;
-    config.nessusApiToken           = configJson.nesuss.apiToken;
+    config.nessusPassword           = configJson.nessus.password;
+    config.nessusAccessKey          = configJson.nessus.accessKey;
+    config.nessusSecretKey          = configJson.nessus.secretKey;
     config.nessusScanTemplateUUID   = configJson.nessus.templateUUID;
 
     config.dbUri         = configJson.db.uri;
     config.dbCollection  = configJson.db.collection;
- 
+
+
     config.metasploitUrl      = configJson.metasploit.url;
     config.metasploitUsername = configJson.metasploit.username;
     config.metasploitPassword = configJson.metasploit.password;

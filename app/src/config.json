@@ -10,7 +10,10 @@
   {
     "url": "https://172.18.1.6:8834",
     "username": "nessus",
-    "password": "CyberSecurity"
+    "password": "CyberSecurity",
+    "accessKey": "bf457ceceb0f2c15f6ffd33407b655257a8aebfc62f41ff6a304c11039632e5d",
+    "secretKey": "3f24b00caddf5e737ee9b94bace9bccf36613338b40c7e72038310cf7499f0ac",
+    "templateUUID": ""
   },
   "metasploit":
   {
