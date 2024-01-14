@@ -43,13 +43,13 @@ async function main() {
             stopwatch.start('init');
 
             logger.debug(`Login to Nessus`);
-            const nessusSessionToken = await getNessusToken(config);
+            //const nessusSessionToken = await getNessusToken(config);
 
             logger.debug(`Login to Metasploit Framework`);
-            const metasploitSessionToken = await getMetasploitToken(config);
+            //const metasploitSessionToken = await getMetasploitToken(config);
 
             logger.debug('Lising Metasploit Modules available');
-            const metasploitModules = await listMetasploitModules(metasploitSessionToken, config);
+            //const metasploitModules = await listMetasploitModules(metasploitSessionToken, config);
 
             stopwatch.stop();
 

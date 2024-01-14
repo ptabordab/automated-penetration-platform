@@ -20,6 +20,7 @@ export const getNessusToken = async (config:any) => {
     } 
     catch (error: any) 
     {
+        logger.error(error);
         throw new Error(`Login failed: ${error.message}`);
     }
 
