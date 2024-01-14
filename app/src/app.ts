@@ -5,6 +5,8 @@ import { getConfig } from './shared/getConfig';
 import { getNessusToken } from './nessus/getNessusToken';
 import { getMetasploitToken } from './metasploit/getMetasploitToken';
 import { listMetasploitModules } from './metasploit/listMetasploitModules';
+import { MongoClient, ObjectId } from 'mongodb';
+import { saveNmapResults } from './db/saveNmapResults';
 
 async function main() {
     try
@@ -67,6 +69,13 @@ async function main() {
                 logger.debug(`Processing nmap results `);
     
                 logger.debug(nmapResults);
+
+                const client = new MongoClient(config.dbUri, {  });
+
+                // Save results into the database 
+                logger.debug(`Saving nmap results to the database`);
+                const scanDocId:ObjectId = await saveNmapResults(nmapResults, client, config);
+                
             }
             else
             {
