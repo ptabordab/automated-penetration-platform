@@ -2,6 +2,9 @@ import { runNmapScan } from './nmap/runNmapScan';
 import * as log4js from 'log4js';
 import { StopWatch } from 'stopwatch-node';
 import { getConfig } from './shared/getConfig';
+import { getNessusToken } from './nessus/getNessusToken';
+import { getMetasploitToken } from './metasploit/getMetasploitToken';
+import { listMetasploitModules } from './metasploit/listMetasploitModules';
 
 async function main() {
     try
@@ -35,7 +38,22 @@ async function main() {
         {
             const stopwatch = new StopWatch(loggerName);
 
-            
+            // Authenticate and get the session token from Nessus & Metasploit Framework
+
+            stopwatch.start('init');
+
+            logger.debug(`Login to Nessus`);
+            const nessusSessionToken = await getNessusToken(config);
+
+            logger.debug(`Login to Metasploit Framework`);
+            const metasploitSessionToken = await getMetasploitToken(config);
+
+            logger.debug('Lising Metasploit Modules available');
+            const metasploitModules = await listMetasploitModules(metasploitSessionToken, config);
+
+            stopwatch.stop();
+
+                
             // Run Nmap
     
             stopwatch.start('nmap');
