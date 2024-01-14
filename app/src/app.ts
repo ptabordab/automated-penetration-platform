@@ -33,7 +33,7 @@ async function main() {
 
         if( process.argv.length ===  2)
         { 
-            logger.error(`Usage: node app.js <IP Address>, node app.js 172.18.1.4`);
+            logger.error(`Usage: node app.js <IP Address> , node app.js 172.18.1.4`);
             logger.error('       node app.js <CIDR>       , node app.js 172.18.1.0/24');
             logger.error('       node app.js <hostname>   , node app.js mycomputer.local ');
 
