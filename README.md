@@ -169,3 +169,4 @@ APP is a versatile platform performing a range of functions to test the security
 7. [Docker/Docker Compose](/docs/docker/how_to_install_docker_on_ubuntu.md)
 8. [How to install git on Ubuntu](/docs/git/how_to_install_git_on_ubuntu.md)
 9. [How to install Docker on Ubuntu](/docs/docker/how_to_install_docker_on_ubuntu.md)
+10. [How o install metasploit framework on Ubuntu](/docs/metasploit/how_to_install_metasploit_framework_on_ubuntu.md)

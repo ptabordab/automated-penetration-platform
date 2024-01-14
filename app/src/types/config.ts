@@ -22,6 +22,12 @@ export class Config
     dbUri: string = "";
     dbCollection: string = "";
 
+    // metasploit 
+    metasploitUrl: string = "";
+    metasploitUsername: string = "";
+    metasploitPassword: string = "";
+   
+
     // Promise Delay (Time-out)
     promiseDelay: Number = 10;
 

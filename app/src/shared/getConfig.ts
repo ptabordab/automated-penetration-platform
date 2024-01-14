@@ -31,7 +31,15 @@ export const getConfig = () : Config =>
     config.dbUri         = configJson.db.uri;
     config.dbCollection  = configJson.db.collection;
  
+    config.metasploitUrl      = configJson.metasploit.url;
+    config.metasploitUsername = configJson.metasploit.username;
+    config.metasploitPassword = configJson.metasploit.password;
+
+
     config.promiseDelay = configJson.promise.delay;
+
+
+
 
     logger.debug(`Configuration: ${JSON.stringify(config)}`);
 

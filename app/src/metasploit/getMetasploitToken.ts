@@ -2,15 +2,16 @@ import * as log4js from 'log4js';
 const axios = require('axios');
 
 
-export const getNessusToken = async (config:any) => {
+export const getMetasploitToken = async (config:any) => {
 
-    const logger = log4js.getLogger("getNessusToken");
+    const logger = log4js.getLogger("getMetasploitToken");
+
 
    try
    {
-        const response = await axios.post(`${config.nessusApiUrl}/session`, {
-     		      username: config.nessusUsername,
-     		      password: config.nessusPassword
+        const response = await axios.post(`${config.metasploitUrl}/login`, {
+     		      username: config.metasploitUsername,
+     		      password: config.metasploitPassword
         });
 
         const token = response.data.token;

@@ -66,6 +66,19 @@ services:
       virtual-net:
         ipv4_address: 172.18.1.6
 
+  metasploit: 
+    image: metasploitframework/metasploit-framework
+    container_name: metasploit
+    command: bash -c "msfdb init && /bin/bash"
+    ports:
+      - "4444:4444"  # Metasploit RPC port
+      - "8080:8080"  # Metasploit web UI port
+    tty: true
+    networks:
+      virtual-net:
+        ipv4_address: 172.18.1.7
+
+
 
   #
   #
