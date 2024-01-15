@@ -7,6 +7,8 @@ import { getMetasploitToken } from './metasploit/getMetasploitToken';
 import { listMetasploitModules } from './metasploit/listMetasploitModules';
 import { MongoClient, ObjectId } from 'mongodb';
 import { saveNmapResults } from './db/saveNmapResults';
+import { getHosts } from './db/getHosts';
+import { Host } from './types/host';
 
 async function main() {
     try
@@ -78,6 +80,20 @@ async function main() {
                 logger.debug(`Saving nmap results to the database`);
                 const scanDocId:ObjectId = await saveNmapResults(nmapResults, client, config);
                 
+
+                stopwatch.start('scheduling-vulnerabilities');
+
+                logger.debug(`Gettting IP Addresses from nmap discovery `);
+                let hosts: Host[] = await getHosts(scanDocId, client, config);
+
+                logger.debug(`Running Vulnerability Scan on Targets found`);
+                //const scanDetails:any[] = await runVulnerabilityScans(hosts, nessusSessionToken, config);
+
+                //logger.debug(scanDetails);
+
+                stopwatch.stop();
+
+
             }
             else
             {
