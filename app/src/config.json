@@ -22,7 +22,7 @@
     "url": "http://172.18.1.7:4444/api"
   },      
   "db": {
-    "uri": "mongodb://db_admin:CyberSecurity@172.18.1.4/:27017?authSource=app-db",
+    "uri": "mongodb://db_admin:CyberSecurity@172.18.1.4:27017/app-db?authSource=admin",
     "collection": "discoveries"
   },
   "promise" : {
