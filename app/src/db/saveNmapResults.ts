@@ -12,57 +12,130 @@ export async function saveNmapResults(  nmapResults: any,
 
     let result: any = {};
 
-    dbClient.connect(async(err: any) =>{
+    try{
 
-    if (err) {
-      logger.error('Error connecting to MongoDB:', err);
-      return;
-    }
+      await dbClient.connect();
+
+      const dbList = await dbClient.db().admin().listDatabases();
+
+      console.log(dbList);
 
 
-    // Select the database
-    const database = dbClient.db();
+      // Select the database
+      const database = dbClient.db();
 
-    // Specify the collection
-    const collection = database.collection(config.dbCollection);
 
-    const scanDate = dateFormat('yyyy-MM-dd', new Date());
-    const scanTime = dateFormat('hh:mm:ss', new Date());
+      // Specify the collection
+      const collection = database.collection(config.dbCollection);
 
-    let nmapResultsToInsert: any[] = [];
+      logger.debug(collection);
 
-    if(Array.isArray(nmapResults))
-    {
-      // In case nmapResultss contains an array of hosts
-      nmapResultsToInsert = [...nmapResults];
-    }
-    else
-    {
-      // In case nmapResults is a single hosts, we still want it to be an array 
-      nmapResultsToInsert.push(nmapResults);
-    }
+      const scanDate = dateFormat('yyyy-MM-dd', new Date());
+      const scanTime = dateFormat('hh:mm:ss', new Date());
 
-    // Document to be inserted
-    const scanDocument = {
-      ScanDate : scanDate,
-      ScanTime : scanTime,
-      nmap     : nmapResultsToInsert
-    };
+      let nmapResultsToInsert: any[] = [];
 
-    try
-    {
+      if(Array.isArray(nmapResults))
+      {
+        // In case nmapResultss contains an array of hosts
+        nmapResultsToInsert = [...nmapResults];
+      }
+      else
+      {
+        // In case nmapResults is a single hosts, we still want it to be an array 
+        nmapResultsToInsert.push(nmapResults);
+      }
+
+      // Document to be inserted
+      const scanDocument = {
+        ScanDate : scanDate,
+        ScanTime : scanTime,
+        nmap     : nmapResultsToInsert
+      };
+
+      
       // Insert a single document
       result = await collection.insertOne(scanDocument);
     
       logger.debug('Document inserted:', result.insertedId);
-    } 
-    finally 
+
+
+    }
+    catch(error:any)
     {
-      // Close the connection
-      dbClient.close();
+      logger.error(error);
+
+      throw error;
+    }  
+    finally{
+      await dbClient.close();
     }
 
-  });
+
+    // await dbClient.connect(async(err: any) =>{
+
+    // if (err) {
+    //   logger.error('Error connecting to MongoDB:', err);
+    //   return;
+    // }
+    // else{
+    //   logger.debug('Connected to the database');
+    // }
+
+    // const databases = await dbClient.db().admin().listDatabases();
+
+    // console.log(databases);
+
+    // // Select the database
+    // const database = dbClient.db();
+
+    // logger.debug(database);
+
+
+    // // Specify the collection
+    // const collection = database.collection(config.dbCollection);
+
+    // logger.debug(collection);
+
+    // const scanDate = dateFormat('yyyy-MM-dd', new Date());
+    // const scanTime = dateFormat('hh:mm:ss', new Date());
+
+    // let nmapResultsToInsert: any[] = [];
+
+    // if(Array.isArray(nmapResults))
+    // {
+    //   // In case nmapResultss contains an array of hosts
+    //   nmapResultsToInsert = [...nmapResults];
+    // }
+    // else
+    // {
+    //   // In case nmapResults is a single hosts, we still want it to be an array 
+    //   nmapResultsToInsert.push(nmapResults);
+    // }
+
+    // logger.debug(nmapResultsToInsert);
+
+    // // Document to be inserted
+    // const scanDocument = {
+    //   ScanDate : scanDate,
+    //   ScanTime : scanTime,
+    //   nmap     : nmapResultsToInsert
+    // };
+
+    // try
+    // {
+    //   // Insert a single document
+    //   result = await collection.insertOne(scanDocument);
+    
+    //   logger.debug('Document inserted:', result.insertedId);
+    // } 
+    // finally 
+    // {
+    //   // Close the connection
+    //   await dbClient.close();
+    // }
+
+  // });
 
   return result;
 }
