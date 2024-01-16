@@ -5,7 +5,7 @@ import { Host } from '../types/host'
 
 
 
-export async function getHosts( scanDocumentId:ObjectId, 
+export async function getHosts( scanDocumentId:string, 
                                 dbClient:any,
                                 config: any) 
 {
@@ -26,7 +26,9 @@ export async function getHosts( scanDocumentId:ObjectId,
       // Specify the collection
       const collection = database.collection(config.dbCollection);
 
-      result = await collection.findOne({ _id: new ObjectId(scanDocumentId) });
+      logger.debug(`Scan Document Id to search ${scanDocumentId}`);
+
+      result = await collection.findOne({ _id:  new ObjectId(scanDocumentId)});
 
       if (result) 
       {
@@ -58,10 +60,10 @@ export async function getHosts( scanDocumentId:ObjectId,
 
           let host:Host = new Host();
 
-          host.hostname = element.hstname;
+          host.hostname = element.hostname;
           host.ipAddress = element.ip;
           host.macAddress = element.mac;
-          host.openPorts = element.opoenPorts;
+          host.openPorts = element.openPorts;
 
           hosts.push(host);
 

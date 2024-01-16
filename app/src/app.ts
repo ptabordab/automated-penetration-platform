@@ -74,14 +74,12 @@ async function main() {
 
                 const client = new MongoClient(config.dbUri, {  });
 
-                logger.debug(client);
-
                 // Save results into the database 
                 logger.debug(`Saving nmap results to the database`);
-                const scanDocId:ObjectId = await saveNmapResults(nmapResults, client, config);
+                const scanDocId:any = await saveNmapResults(nmapResults, client, config);
                 
-
-                stopwatch.start('scheduling-vulnerabilities');
+                logger.debug(`Scan Document Id: ${JSON.stringify(scanDocId)}`);
+                //stopwatch.start('scheduling-vulnerabilities');
 
                 logger.debug(`Gettting IP Addresses from nmap discovery `);
                 let hosts: Host[] = await getHosts(scanDocId, client, config);
@@ -91,7 +89,7 @@ async function main() {
 
                 //logger.debug(scanDetails);
 
-                stopwatch.stop();
+                //stopwatch.stop();
 
 
             }

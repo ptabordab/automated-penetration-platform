@@ -1,5 +1,6 @@
 const { MongoClient } = require('mongodb');
 import * as log4js from 'log4js';
+import { ObjectId } from 'mongodb';
 
 const dateFormat = require('date-format');
 
@@ -12,6 +13,8 @@ export async function saveNmapResults(  nmapResults: any,
 
   let result: any = {};
 
+  let _id:ObjectId;
+
   try
   {
 
@@ -22,8 +25,6 @@ export async function saveNmapResults(  nmapResults: any,
 
     // Specify the collection
     const collection = database.collection(config.dbCollection);
-
-    logger.debug(collection);
 
     const scanDate = dateFormat('yyyy-MM-dd', new Date());
     const scanTime = dateFormat('hh:mm:ss', new Date());
@@ -52,9 +53,11 @@ export async function saveNmapResults(  nmapResults: any,
     // Insert a single document
     result = await collection.insertOne(scanDocument);
   
+    logger.debug(`result = ${JSON.stringify(result)}`);
     logger.debug('Document inserted:', result.insertedId);
 
-
+    //_id = result.insertId;
+    _id = new ObjectId(result.insertedId);
   }
   catch(error:any)
   {
@@ -68,7 +71,7 @@ export async function saveNmapResults(  nmapResults: any,
   }
 
 
-  return result;
+  return _id;
 }
  
 
