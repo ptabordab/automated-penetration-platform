@@ -36,6 +36,11 @@ and fix security issues before they are exploited by attackers.
 Please note that the APM is still in development and
 more details will be available soon.
 
+### Security note (local configuration)
+- **Do not commit secrets**: credentials, API keys, and connection strings should be provided via environment variables or local config files.
+- **App config**: copy `app/src/config.example.json` to `app/src/config.json` and fill in values locally (the repo ignores `config.json`).
+- **Docker config**: copy `docker/.env.example` to `docker/.env` and fill in values locally (compose now references `.env`).
+
 
 
 ### Benefits
