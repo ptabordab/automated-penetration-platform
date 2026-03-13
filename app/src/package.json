@@ -17,8 +17,8 @@
   "keywords": [],
   "author": "Rob McAfee <rob.mcafee@symtech.com>, Phil Santos <phil.adrian.santos@gmail.com>, Pedro Taborda <taborda_pedro@yahoo.com>",
   "license": "ISC",
-  "dependencies": {
-    "axios": "^1.13.6",
+  "dependencies": {    
+    "axios": ">=1.7.4",
     "copyfiles": "^2.4.1",
     "lodash.isempty": "^4.4.0",
     "log4js": "^6.9.1",
