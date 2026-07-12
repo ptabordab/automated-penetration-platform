@@ -1,0 +1,11 @@
+c:\repos\automated-penetration-platform\PortalFileEditor\bin\Release\net48\PortalFileEditor.exe.config
+c:\repos\automated-penetration-platform\PortalFileEditor\bin\Release\net48\PortalFileEditor.exe
+c:\repos\automated-penetration-platform\PortalFileEditor\bin\Release\net48\PortalFileEditor.pdb
+c:\repos\automated-penetration-platform\PortalFileEditor\obj\Release\net48\PortalFileEditor.csproj.AssemblyReference.cache
+c:\repos\automated-penetration-platform\PortalFileEditor\obj\Release\net48\PortalFileEditor.GeneratedMSBuildEditorConfig.editorconfig
+c:\repos\automated-penetration-platform\PortalFileEditor\obj\Release\net48\PortalFileEditor.AssemblyInfoInputs.cache
+c:\repos\automated-penetration-platform\PortalFileEditor\obj\Release\net48\PortalFileEditor.AssemblyInfo.cs
+c:\repos\automated-penetration-platform\PortalFileEditor\obj\Release\net48\PortalFileEditor.csproj.CoreCompileInputs.cache
+c:\repos\automated-penetration-platform\PortalFileEditor\obj\Release\net48\PortalFileEditor.sourcelink.json
+c:\repos\automated-penetration-platform\PortalFileEditor\obj\Release\net48\PortalFileEditor.exe
+c:\repos\automated-penetration-platform\PortalFileEditor\obj\Release\net48\PortalFileEditor.pdb

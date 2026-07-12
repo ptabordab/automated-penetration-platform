@@ -8,7 +8,7 @@ export const getNessusToken = async (config:any) => {
 
    try
    {
-        const response = await axios.post(`${config.nessusApiUrl}/session`, {
+        const response = await axios.post(`${config.nessusUrl}/session`, {
      		      username: config.nessusUsername,
      		      password: config.nessusPassword
         });

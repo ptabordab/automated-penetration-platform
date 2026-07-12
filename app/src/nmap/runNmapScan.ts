@@ -36,7 +36,7 @@ export const runNmapScan = async ( ipaddress_or_cidr: string, config:any) => {
         logger.error('Error scanning with Nmap:', error);
         reject(error);
       }
-    }, config.promisesDelay); // Set delay
+    }, config.promiseDelay); // Set delay
 
 
   });

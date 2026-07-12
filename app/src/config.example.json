@@ -1,13 +1,8 @@
 {
-  "nmap":
-  {
-    "switches": [
-      "-sT", 
-      "-sV"
-    ]
+  "nmap": {
+    "switches": ["-sT", "-sV"]
   },
-  "nessus":
-  {
+  "nessus": {
     "url": "https://127.0.0.1:8834",
     "username": "nessus",
     "password": "",
@@ -15,17 +10,16 @@
     "secretKey": "",
     "templateUUID": ""
   },
-  "metasploit":
-  {
+  "metasploit": {
     "username": "msf",
     "password": "",
     "url": "http://127.0.0.1:4444/api"
-  },      
+  },
   "db": {
     "uri": "mongodb://db_admin:CHANGE_ME@127.0.0.1:27017/app-db?authSource=admin",
     "collection": "discoveries"
   },
-  "promise" : {
+  "promise": {
     "delay": 2000
   }
 }
